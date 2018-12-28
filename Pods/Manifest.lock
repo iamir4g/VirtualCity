@@ -1,0 +1,83 @@
+PODS:
+  - Alamofire (4.8.0)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlacePicker (2.7.0):
+    - GoogleMaps (= 2.7.0)
+    - GooglePlaces (= 2.7.0)
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
+  - IQKeyboardManagerSwift (6.2.0)
+  - MaterialComponents/AnimationTiming (70.0.0)
+  - MaterialComponents/Palettes (70.0.0)
+  - MaterialComponents/private/Application (70.0.0)
+  - MaterialComponents/private/Math (70.0.0)
+  - MaterialComponents/TextFields (70.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/Typography (70.0.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (1.1.0)
+  - ObjectMapper (3.4.1)
+  - SideMenu (5.0.3)
+  - SkyFloatingLabelTextField (3.6.0)
+  - SwiftyJSON (4.2.0)
+  - XLPagerTabStrip (8.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - AlamofireObjectMapper (~> 5.2)
+  - GoogleMaps
+  - GooglePlacePicker
+  - GooglePlaces
+  - IQKeyboardManagerSwift
+  - MaterialComponents/TextFields
+  - SideMenu
+  - SkyFloatingLabelTextField (~> 3.0)
+  - SwiftyJSON
+  - XLPagerTabStrip (~> 8.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
+    - IQKeyboardManagerSwift
+    - MaterialComponents
+    - MDFInternationalization
+    - ObjectMapper
+    - SideMenu
+    - SkyFloatingLabelTextField
+    - SwiftyJSON
+    - XLPagerTabStrip
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  MaterialComponents: 7c107af5ae6566de2f1ba94bde3db99d1b874bab
+  MDFInternationalization: b5b8626628abf026e630e5ebaeee563037712cbb
+  ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+  SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
+
+PODFILE CHECKSUM: d82d10bcc50114bf74081bec861af9cc6a727e24
+
+COCOAPODS: 1.5.0

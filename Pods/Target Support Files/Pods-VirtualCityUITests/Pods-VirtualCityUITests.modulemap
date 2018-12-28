@@ -1,0 +1,6 @@
+framework module Pods_VirtualCityUITests {
+  umbrella header "Pods-VirtualCityUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
