@@ -15,14 +15,14 @@ import SwiftyJSON
 
 class ShopTableViewController: UIViewController , UITableViewDataSource,UITableViewDelegate ,UISearchBarDelegate{
 
-   var Shops:[ObjectShop] = []
-    var ShopsFilte:[ObjectShop] = []
+    var Shops:[ObjectShop] = []
+    var ShopsFilte : [ShopElement]!
     var NewShops : GetCategoryProductData!
     var selectesSubMenuID:Int = 0
     var shopId : Int = 0
 
-    @IBOutlet weak var hidinView: UIView!
-    @IBOutlet weak var indi: UIActivityIndicatorView!
+   // @IBOutlet weak var hidinView: UIView!
+    //@IBOutlet weak var indi: UIActivityIndicatorView!
     @IBOutlet weak var myTable: UITableView!
     @IBOutlet weak var mySearch: UISearchBar!
     @IBAction func mapBtn(_ sender: Any) {
@@ -32,9 +32,13 @@ class ShopTableViewController: UIViewController , UITableViewDataSource,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         myTable.delegate = self
-        self.hidinView.isHidden = true
+        self.mySearch.delegate = self
+       //self.hidinView.isHidden = true
        // self.indi.startAnimating()
         print("cat id is : \(selectesSubMenuID)")
+       // self.mySearch.enablesReturnKeyAutomatically = true
+        //self.mySearch.endEditing(true)
+        //self.ShopsFilte = NewShops.shops
         getAllShops(catID: selectesSubMenuID)
     }
 
@@ -43,12 +47,21 @@ class ShopTableViewController: UIViewController , UITableViewDataSource,UITableV
         Alamofire.request(URL).responseGetCategoryProductData{ respons in
             self.NewShops = respons.result.value!
         
-            for vv in self.NewShops.shops! {
-               // print("bbbb : \(vv.name)")
-            }
+//            for vv in self.NewShops.shops! {
+//               // print("bbbb : \(vv.name)")
+//            }
             DispatchQueue.main.async {
                 self.myTable.reloadData()
             }
+            self.ShopsFilte = self.NewShops.shops
+//            switch self.NewShops.shops!.isEmpty {
+//            case true:
+//                print("Nothing to show")
+//            case false:
+//
+//            default:
+//                print("ridi baba!")
+//            }
         }
     }
     override func didReceiveMemoryWarning() {
@@ -59,7 +72,7 @@ class ShopTableViewController: UIViewController , UITableViewDataSource,UITableV
       
        
         
-        return self.NewShops?.shops?.count ?? 0
+        return self.ShopsFilte?.count ?? 0//self.NewShops?.shops?.count ?? 0
      
 
 
@@ -74,7 +87,7 @@ class ShopTableViewController: UIViewController , UITableViewDataSource,UITableV
              }
         //let shopfordetail = NewShops.shops
        // let shopditail = ShopsFilte[indexPath.row]
-        if let nameSh = self.NewShops.shops {
+        if let nameSh = self.ShopsFilte{//self.NewShops.shops {
             cell.addresshoplbl.text = nameSh[indexPath.row].address//shopfordetail![indexPath.row].address
             cell.shopnamelbl.text = nameSh[indexPath.row].name//shopfordetail![indexPath.row].name
         }
@@ -87,43 +100,52 @@ class ShopTableViewController: UIViewController , UITableViewDataSource,UITableV
 
         return cell
     }
+    // MARK: - Table View didSelected Method
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let nameSh = self.NewShops.shops {
             self.shopId = nameSh[indexPath.row].id!
         }
         performSegue(withIdentifier: "gotoshop", sender: nil)
     }
+    // MARK: - Table view Height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        guard !searchText.isEmpty else {
-//            self.ShopsFilte = self.Shops
-//            myTable.reloadData()
-//            return
-//        }
-//        ShopsFilte = Shops.filter({name -> Bool in
-//            name.address.lowercased().contains(searchText.lowercased())
-//
-//        })
-//        ShopsFilte = Shops.filter({name -> Bool in
-//
-//            name.category.lowercased().contains(searchText.lowercased())
-//
-//        })
-//        ShopsFilte = Shops.filter({name -> Bool in
-//
-//            name.name.lowercased().contains(searchText.lowercased())
-//
-//        })
-//        ShopsFilte = Shops.filter({name -> Bool in
-//
-//            name.region.lowercased().contains(searchText.lowercased())
-//        })
-//
-//        myTable.reloadData()
-//    }
+    // MARK: - Search
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        guard !searchText.isEmpty else {
+            self.ShopsFilte = self.NewShops.shops//self.Shops
+            myTable.reloadData()
+            return
+        }
+        ShopsFilte = NewShops.shops?.filter({name -> Bool in
+            name.address?.lowercased().contains(searchText.lowercased()) ?? false
 
+        })
+//        ShopsFilte = NewShops.shops?.filter({name -> Bool in
+//
+//            name.category?.lowercased().contains(searchText.lowercased()) ?? false
+//
+//        })
+        ShopsFilte = NewShops.shops?.filter({name -> Bool in
+
+            name.name?.lowercased().contains(searchText.lowercased()) ?? false
+
+        })
+        ShopsFilte = NewShops.shops?.filter({name -> Bool in
+
+            name.region?.lowercased().contains(searchText.lowercased()) ?? false
+        })
+        
+
+        myTable.reloadData()
+    }
+
+    // MARK: - For Hide Keyboard When Click In Search BTN
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 
   
     // MARK: - Navigation

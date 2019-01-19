@@ -990,79 +990,131 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="varzeshi" translatesAutoresizingMaskIntoConstraints="NO" id="aqM-6C-Mfk">
-                                <rect key="frame" x="2" y="0.0" width="370" height="373"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="جستو جو کنید" translatesAutoresizingMaskIntoConstraints="NO" id="n1E-Ls-i7h">
-                                <rect key="frame" x="0.0" y="196" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="P7D-ii-BUV" id="eJc-fT-rgA"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FD0-Oh-O97">
-                                <rect key="frame" x="0.0" y="252" width="375" height="366"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="sectionIndexBackgroundColor" red="1" green="0.99998801946640015" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="130" id="jAs-5d-3U5" customClass="TableViewCell" customModule="VirtualCity" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="130"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jAs-5d-3U5" id="vmy-2y-KYd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLR-3m-38j">
-                                                    <rect key="frame" x="271" y="11" width="97" height="107"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نام رستوران" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qd-QM-x60">
-                                                    <rect key="frame" x="87" y="11" width="176" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" name="IRANSansMobile" family="IRANSansMobile" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zy-15-p0W">
-                                                    <rect key="frame" x="87" y="39" width="176" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" name="IRANSansMobile" family="IRANSansMobile" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOL-dJ-QAc">
-                                                    <rect key="frame" x="87" y="68" width="176" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" name="IRANSansMobile" family="IRANSansMobile" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-mk-yzT" userLabel="LogoAndSearchStack">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6uF-Q2-nZ0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="varzeshi" translatesAutoresizingMaskIntoConstraints="NO" id="aqM-6C-Mfk">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="196" id="buc-V6-eLt"/>
+                                                    <constraint firstAttribute="width" constant="375" id="g5Q-GV-p40"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <searchBar contentMode="redraw" placeholder="جستو جو کنید" translatesAutoresizingMaskIntoConstraints="NO" id="n1E-Ls-i7h">
+                                        <rect key="frame" x="0.0" y="196" width="375" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="TdO-h2-EDh"/>
+                                        </constraints>
+                                        <color key="barTintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <outlet property="addresshoplbl" destination="1zy-15-p0W" id="AJl-3u-PZw"/>
-                                            <outlet property="isopenlbl" destination="sOL-dJ-QAc" id="uhD-7Z-Vip"/>
-                                            <outlet property="shopnamelbl" destination="7Qd-QM-x60" id="Xl3-cf-nyq"/>
+                                            <outlet property="delegate" destination="P7D-ii-BUV" id="eJc-fT-rgA"/>
                                         </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="P7D-ii-BUV" id="FiH-M2-Bu0"/>
-                                    <outlet property="delegate" destination="P7D-ii-BUV" id="Cfa-lA-yol"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uak-ZD-Ivc">
+                                    </searchBar>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="n1E-Ls-i7h" secondAttribute="trailing" id="fke-7F-H6h"/>
+                                    <constraint firstAttribute="bottom" secondItem="n1E-Ls-i7h" secondAttribute="bottom" id="wkA-wR-ITy"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ykC-6m-4mR" userLabel="TableStack">
+                                <rect key="frame" x="0.0" y="269" width="375" height="349"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FD0-Oh-O97">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="separatorColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="sectionIndexBackgroundColor" red="1" green="0.99998801946640015" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="130" id="jAs-5d-3U5" customClass="TableViewCell" customModule="VirtualCity" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jAs-5d-3U5" id="vmy-2y-KYd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cK2-HB-dCU">
+                                                            <rect key="frame" x="6" y="11" width="363" height="107"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jfL-pp-gBm" userLabel="LableCellStack View">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="78"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نام رستوران" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qd-QM-x60">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="258" height="20"/>
+                                                                            <color key="backgroundColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="20" id="gUW-ac-u80"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="IRANSansMobile" family="IRANSansMobile" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zy-15-p0W">
+                                                                            <rect key="frame" x="0.0" y="28" width="258" height="21"/>
+                                                                            <color key="backgroundColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="21" id="M1D-HL-mF7"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="IRANSansMobile" family="IRANSansMobile" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOL-dJ-QAc">
+                                                                            <rect key="frame" x="0.0" y="57" width="258" height="21"/>
+                                                                            <color key="backgroundColor" red="1" green="0.99998801950000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="21" id="Uhu-Vf-gjE"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="IRANSansMobile" family="IRANSansMobile" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tWK-0E-qqS" userLabel="ImageCellStack View">
+                                                                    <rect key="frame" x="266" y="0.0" width="97" height="107"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rLR-3m-38j">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="97" height="107"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="97" id="9YS-5y-8LS"/>
+                                                                                <constraint firstAttribute="height" constant="107" id="Hbq-kp-DWu"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="cK2-HB-dCU" firstAttribute="leading" secondItem="vmy-2y-KYd" secondAttribute="leading" constant="6" id="VXB-n6-R2S"/>
+                                                        <constraint firstItem="cK2-HB-dCU" firstAttribute="top" secondItem="vmy-2y-KYd" secondAttribute="top" constant="11" id="buF-09-m7R"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cK2-HB-dCU" secondAttribute="trailing" constant="6" id="zew-Oz-sKo"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" red="1" green="0.99998801946640015" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                <connections>
+                                                    <outlet property="addresshoplbl" destination="1zy-15-p0W" id="AJl-3u-PZw"/>
+                                                    <outlet property="isopenlbl" destination="sOL-dJ-QAc" id="uhD-7Z-Vip"/>
+                                                    <outlet property="shopnamelbl" destination="7Qd-QM-x60" id="Xl3-cf-nyq"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="P7D-ii-BUV" id="FiH-M2-Bu0"/>
+                                            <outlet property="delegate" destination="P7D-ii-BUV" id="Cfa-lA-yol"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uak-ZD-Ivc">
                                 <rect key="frame" x="290" y="560" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <state key="normal" title="Button" image="Location_marker"/>
@@ -1070,25 +1122,21 @@
                                     <segue destination="qs9-d2-1oG" kind="show" identifier="gotomap" id="lbI-me-9VZ"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVX-dm-AA3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-Qg-jsG">
-                                        <rect key="frame" x="177" y="299" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.5040132705" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ykC-6m-4mR" firstAttribute="leading" secondItem="vaG-8c-uRr" secondAttribute="leading" id="7Ci-cd-mUd"/>
+                            <constraint firstItem="ykC-6m-4mR" firstAttribute="top" secondItem="l0n-mk-yzT" secondAttribute="bottom" constant="3" id="CC3-as-MlL"/>
+                            <constraint firstItem="vaG-8c-uRr" firstAttribute="bottom" secondItem="ykC-6m-4mR" secondAttribute="bottom" id="Hdr-Zm-wJc"/>
+                            <constraint firstItem="l0n-mk-yzT" firstAttribute="leading" secondItem="vaG-8c-uRr" secondAttribute="leading" id="dTB-lw-Q3S"/>
+                            <constraint firstItem="l0n-mk-yzT" firstAttribute="top" secondItem="0Ty-xg-u2L" secondAttribute="top" id="h1D-WN-SX1"/>
+                            <constraint firstItem="l0n-mk-yzT" firstAttribute="trailing" secondItem="vaG-8c-uRr" secondAttribute="trailing" id="mWa-CP-cMB"/>
+                            <constraint firstItem="vaG-8c-uRr" firstAttribute="trailing" secondItem="ykC-6m-4mR" secondAttribute="trailing" id="ucx-C2-eL6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vaG-8c-uRr"/>
                     </view>
                     <navigationItem key="navigationItem" title="ورزشی" id="R4V-QX-d7N"/>
                     <connections>
-                        <outlet property="hidinView" destination="sVX-dm-AA3" id="qtR-Tu-gND"/>
-                        <outlet property="indi" destination="VhR-Qg-jsG" id="TCy-9E-6ZX"/>
                         <outlet property="mySearch" destination="n1E-Ls-i7h" id="beV-RL-Jgh"/>
                         <outlet property="myTable" destination="FD0-Oh-O97" id="d9V-J3-OJr"/>
                         <segue destination="G1f-gN-kFA" kind="show" identifier="gotoshop" id="uUd-5R-aT7"/>

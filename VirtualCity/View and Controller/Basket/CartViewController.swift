@@ -11,22 +11,39 @@ import CoreData
 class CartViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
     
-   
+  // let dateAlert = UIAlertController(title: "tarikh", message: "rooz", preferredStyle: .alert)
     @IBOutlet weak var tv: UITableView!
     var valueCart = [Cart]()
+    let hours = ["1","1","1","1","1","1","1","1","1","1","1"]
+    var selectedHour = ""
+   
+    @IBOutlet weak var testTxt: UITextField!
+    
+    var datePicker : UIDatePicker!
+    
+    //let dateFormatter = DateFormatter()
+    //let locale = NSLocale.current
+   
+   
+    
+    
+    
     override func viewDidLoad() {
         tv.delegate = self
         tv.dataSource = self
+      //  testTxt.delegate = self
         super.viewDidLoad()
         self.setupCart()
         NotificationCenter.default.addObserver(self, selector: #selector(setupCart), name: NSNotification.Name(rawValue: "load"), object: nil)
-
-        
+     
         // Do any additional setup after loading the view.
     }
     @objc func setupCart(){
         self.fetchCartValue { (done) in
             if done {
+                if valueCart.isEmpty == true {
+                    self.AlertView(title: "توجه", message: "محصولی در سبد خرید وجود ندارد")
+                }
                 print("ok")
                 DispatchQueue.main.async {
                     self.tv.reloadData()
@@ -41,7 +58,56 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
         }
         
     }
+    @IBAction func birthday(_ sender: UITextField) {
+        creatDatePicker()
+        if testTxt.text?.isEmpty == false {
+            testTxt.text = ""
+        }
 
+    }
+
+    func creatDatePicker(){
+        
+        // DatePicker
+        self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 200))
+        self.datePicker?.backgroundColor = UIColor.white
+        self.datePicker?.datePickerMode = UIDatePickerMode.date
+        self.datePicker.calendar = Calendar(identifier: Calendar.Identifier.persian)
+        self.datePicker.locale = Locale(identifier: "fa_IR")
+        self.testTxt.inputView = datePicker
+         creatToolbarForPickerView()
+    }
+    
+    func creatToolbarForPickerView(){
+        // ToolBar
+         let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        // Adding Button ToolBar
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(CartViewController.dismissKeyBoard))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(CartViewController.dismissKeyBoard))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        testTxt.inputAccessoryView = toolBar
+    }
+    @objc func dismissKeyBoard(){
+        let dateFormatter1 = DateFormatter()
+        dateFormatter1.dateStyle = .medium
+        //dateFormatter1.timeStyle = .none
+        //setNotification()
+        //self.datePicker.resignFirstResponder()
+        dateFormatter1.calendar = Calendar.init(identifier: Calendar.Identifier.persian)
+        dateFormatter1.locale = Locale(identifier: "fa_IR")
+        //datePicker.isHidden = true
+       // self.toolBar.isHidden = true
+        testTxt.text = dateFormatter1.string(from: datePicker.date)
+        view.endEditing(true)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
@@ -116,3 +182,21 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
 }
 
+extension CartViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return hours.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return hours[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedHour = hours[row]
+        testTxt.text = selectedHour
+    }
+    
+    
+}
