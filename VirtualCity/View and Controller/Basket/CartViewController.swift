@@ -14,19 +14,14 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
   // let dateAlert = UIAlertController(title: "tarikh", message: "rooz", preferredStyle: .alert)
     @IBOutlet weak var tv: UITableView!
     var valueCart = [Cart]()
-    let hours = ["1","1","1","1","1","1","1","1","1","1","1"]
+    let hours = ["1","1","1","1","1","1","1",]
     var selectedHour = ""
    
     @IBOutlet weak var testTxt: UITextField!
+    @IBOutlet weak var hourstxt: UITextField!
     
     var datePicker : UIDatePicker!
-    
-    //let dateFormatter = DateFormatter()
-    //let locale = NSLocale.current
-   
-   
-    
-    
+   // var hoursPicker : UIPickerView!
     
     override func viewDidLoad() {
         tv.delegate = self
@@ -65,9 +60,38 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
         }
 
     }
-
-    func creatDatePicker(){
+    @IBAction func hours(_ sender: Any) {
+       creatHoursPicker()
+        if hourstxt.text?.isEmpty == false {
+            hourstxt.text = ""
+        }
+    }
+    
+    func creatHoursPicker(){
+        // HoursPicker
+        let hoursPicker = UIPickerView()
+        hoursPicker.delegate = self
+        self.testTxt.inputView = hoursPicker
+        creatToolbarForPickerView()
+    }
+    func creatToolbarForPickerView(){
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        //Customizations
+        toolBar.barTintColor = .black
+        toolBar.tintColor = .white
         
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(CartViewController.dismissHoursKeyboard))
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        hourstxt.inputAccessoryView = toolBar
+    }
+    @objc func dismissHoursKeyboard() {
+        view.endEditing(true)
+    }
+    func creatDatePicker(){
         // DatePicker
         self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 200))
         self.datePicker?.backgroundColor = UIColor.white
@@ -75,17 +99,16 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
         self.datePicker.calendar = Calendar(identifier: Calendar.Identifier.persian)
         self.datePicker.locale = Locale(identifier: "fa_IR")
         self.testTxt.inputView = datePicker
-         creatToolbarForPickerView()
+         creatToolbarForDatePickerView()
     }
     
-    func creatToolbarForPickerView(){
+    func creatToolbarForDatePickerView(){
         // ToolBar
          let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
-        
         // Adding Button ToolBar
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(CartViewController.dismissKeyBoard))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -98,13 +121,8 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @objc func dismissKeyBoard(){
         let dateFormatter1 = DateFormatter()
         dateFormatter1.dateStyle = .medium
-        //dateFormatter1.timeStyle = .none
-        //setNotification()
-        //self.datePicker.resignFirstResponder()
         dateFormatter1.calendar = Calendar.init(identifier: Calendar.Identifier.persian)
         dateFormatter1.locale = Locale(identifier: "fa_IR")
-        //datePicker.isHidden = true
-       // self.toolBar.isHidden = true
         testTxt.text = dateFormatter1.string(from: datePicker.date)
         view.endEditing(true)
     }
@@ -195,7 +213,7 @@ extension CartViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedHour = hours[row]
-        testTxt.text = selectedHour
+        hourstxt.text = selectedHour
     }
     
     

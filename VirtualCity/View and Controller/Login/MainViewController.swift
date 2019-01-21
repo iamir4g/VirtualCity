@@ -79,24 +79,6 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//    func login(param:Parameters){
-//        Alamofire.request("http://diar.city/api/v1/auth", method: .post, parameters: param, encoding: JSONEncoding.default).responseLoginOrAuthenticate {respons  in
-//            switch re
-//            if let login = respons.result.value {
-//                self.authValue = login
-//
-//                if login.status == "successful" {
-//
-//                    UserDefaults.standard.set(login.token, forKey: "token")
-//                    UserDefaults.standard.set(self.phoneText.text, forKey: "phoneNumber")
-//                    UserDefaults.standard.set(true, forKey: "isLogin")
-//                    self.performSegue(withIdentifier: "ifloginok", sender: nil)
-//                    self.Alert(myMessage: "login anjam shod")
-//
-//                }
-//            }
-//            }
-//        }
 
     // MARK: - Navigation
 

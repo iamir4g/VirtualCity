@@ -649,6 +649,14 @@
             </objects>
             <point key="canvasLocation" x="-366" y="1366"/>
         </scene>
+        <!--Sellerst-->
+        <scene sceneID="6AV-pC-yEE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SellerStoryBoard" referencedIdentifier="Sellerst" id="akN-wj-PNU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0p4-oP-R1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2813" y="575"/>
+        </scene>
         <!--فروشگاه-->
         <scene sceneID="mHK-36-143">
             <objects>
@@ -745,7 +753,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WUM-Ba-dKY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="فروشگاه" id="hiA-lq-Sqy"/>
+                    <navigationItem key="navigationItem" title="فروشگاه" id="hiA-lq-Sqy">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="3Pb-6U-E7W">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nqx-Ag-eyl">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="فروشگاه من"/>
+                                <connections>
+                                    <segue destination="akN-wj-PNU" kind="show" id="vk6-1X-slq"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="CatCollectionView" destination="GUk-tv-zET" id="KHZ-6u-m8V"/>
                         <segue destination="kKQ-Cu-nQw" kind="show" identifier="gotopage2" id="Krl-4I-keq"/>

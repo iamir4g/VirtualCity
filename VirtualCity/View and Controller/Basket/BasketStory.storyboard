@@ -180,10 +180,10 @@
                                                 <rect key="frame" x="17" y="680.5" width="340" height="69.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lRh-ci-L70" userLabel="NahveStack View">
-                                                        <rect key="frame" x="195" y="0.0" width="145" height="20.5"/>
+                                                        <rect key="frame" x="100" y="0.0" width="240" height="20.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نحوه دریافت محصول" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xL-ya-Uc7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="145" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -213,11 +213,18 @@
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="lRh-ci-L70" firstAttribute="leading" secondItem="7OO-pF-IrI" secondAttribute="leading" constant="195" id="g43-zG-USi"/>
+                                                    <constraint firstItem="lRh-ci-L70" firstAttribute="leading" secondItem="7OO-pF-IrI" secondAttribute="leading" constant="100" id="g43-zG-USi"/>
                                                 </constraints>
                                             </stackView>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="انتخاب تاریخ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7w3-6L-LHv">
-                                                <rect key="frame" x="35" y="825" width="322" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="بازه زمانی مورد نظر را انتخالب نمایید" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFi-dz-beK">
+                                                <rect key="frame" x="78" y="825" width="246" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="انتخاب تاریخ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7w3-6L-LHv">
+                                                <rect key="frame" x="24" y="774" width="322" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -226,6 +233,34 @@
                                                     <action selector="birthday:" destination="Qb3-DV-EHY" eventType="editingDidBegin" id="ryh-zH-Xt8"/>
                                                 </connections>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="انتخاب بازه" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VdT-fk-zdO">
+                                                <rect key="frame" x="26" y="859" width="322" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="hours:" destination="Qb3-DV-EHY" eventType="editingDidEnd" id="Fn3-x8-4YH"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تاریخ مورد نظر را انتخاب نمایید" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq6-f5-ETP">
+                                                <rect key="frame" x="102" y="751" width="208" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9F-SR-KIn">
+                                                <rect key="frame" x="212" y="999" width="115" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.17715445160865784" green="0.17732077836990356" blue="0.17718020081520081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="کنسل کردن خرید"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2w-eu-Odt">
+                                                <rect key="frame" x="46" y="999" width="139" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="ثبت و ارسال درخواست"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -235,6 +270,7 @@
                                             <constraint firstItem="0UY-XS-aIa" firstAttribute="top" secondItem="pVh-RZ-JZY" secondAttribute="bottom" constant="16" id="6g3-12-esm"/>
                                             <constraint firstAttribute="trailing" secondItem="gl9-Ud-mHJ" secondAttribute="trailing" id="AN3-VV-hjE"/>
                                             <constraint firstItem="gl9-Ud-mHJ" firstAttribute="leading" secondItem="AIy-KK-ZK3" secondAttribute="leading" id="AZI-sT-yBn"/>
+                                            <constraint firstAttribute="width" constant="375" id="AmP-lN-Srf"/>
                                             <constraint firstItem="gl9-Ud-mHJ" firstAttribute="top" secondItem="Aqn-Ha-3mr" secondAttribute="bottom" constant="8" id="Bom-ao-3vz"/>
                                             <constraint firstItem="pVh-RZ-JZY" firstAttribute="trailing" secondItem="Cw4-RK-6CM" secondAttribute="trailing" id="CoP-bB-WKA"/>
                                             <constraint firstAttribute="height" constant="1513" id="F60-7d-JAb"/>
@@ -249,18 +285,10 @@
                                             <constraint firstItem="7OO-pF-IrI" firstAttribute="leading" secondItem="AIy-KK-ZK3" secondAttribute="leading" constant="17" id="zEB-uA-gW1"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="روز مورد نظر برای دریافت محصول را انتخاب نمایید" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFi-dz-beK">
-                                        <rect key="frame" x="28" y="780" width="339" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="AIy-KK-ZK3" firstAttribute="top" secondItem="xQf-aW-pF5" secondAttribute="top" id="Dw4-G1-9Tf"/>
                                     <constraint firstAttribute="bottom" secondItem="AIy-KK-ZK3" secondAttribute="bottom" constant="-13" id="H0x-wL-GoF"/>
-                                    <constraint firstItem="fFi-dz-beK" firstAttribute="trailing" secondItem="xQf-aW-pF5" secondAttribute="trailingMargin" id="LHk-NE-NKk"/>
-                                    <constraint firstItem="fFi-dz-beK" firstAttribute="top" secondItem="xQf-aW-pF5" secondAttribute="top" constant="780" id="MQ0-TV-IHg"/>
                                     <constraint firstAttribute="trailing" secondItem="AIy-KK-ZK3" secondAttribute="trailing" id="W3s-Vu-tWd"/>
                                     <constraint firstItem="AIy-KK-ZK3" firstAttribute="leading" secondItem="xQf-aW-pF5" secondAttribute="leading" id="dwm-IG-icc"/>
                                 </constraints>
@@ -279,6 +307,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
+                        <outlet property="hourstxt" destination="VdT-fk-zdO" id="y1Y-bO-PnI"/>
                         <outlet property="testTxt" destination="7w3-6L-LHv" id="2Ab-8p-iT1"/>
                         <outlet property="tv" destination="pVh-RZ-JZY" id="PD2-tJ-4fi"/>
                     </connections>
